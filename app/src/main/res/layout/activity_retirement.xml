@@ -233,30 +233,62 @@
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_undo"
+                    android:layout_gravity="right"
+                    android:id="@+id/btnUndo"
+                    android:visibility="gone"
+                    android:elevation="1000dp"
+                    android:background="@drawable/bg_circle_gray"/>
+
                 <ProgressBar
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/progressBar"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:elevation="1000dp"/>
 
-                <ImageButton
-                    android:id="@+id/btnAddReceipt"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/bg_circle_gray"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:src="@drawable/ic_add" />
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btnCaptureReceipt"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/bg_circle_gray"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:src="@drawable/ic_camera_white" />
+
+                    <ImageButton
+                        android:id="@+id/btnPickReceipt"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_circle_gray"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:src="@drawable/ic_image" />
+
+                </LinearLayout>
+
+
 
                 <ImageView
                     android:id="@+id/receiptImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="5dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"/>
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>

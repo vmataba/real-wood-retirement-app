@@ -13,18 +13,20 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".FilePreviewActivity"></activity>
+        <activity android:name=".ProfileUpdateActivity"></activity>
+        <activity android:name=".FilePreviewActivity" />
         <activity android:name=".ReplyActivity" />
         <activity android:name=".SingleRequestActivity" />
         <activity android:name=".NewRequestActivity" />
-        <activity android:name=".RetirementActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".RetirementActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".FinancialRequestActivity" />
         <activity
             android:name=".ProfileActivity"
@@ -37,9 +39,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver android:name=".extra.NetworkChangeReceiver">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
     </application>

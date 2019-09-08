@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.taba.apps.retirementapp.ProfileActivity">
     <item
+        android:id="@+id/menuEditProfile"
+        android:icon="@drawable/ic_edit"
+        android:title="Logout"
+        app:showAsAction="ifRoom|collapseActionView" />    <item
         android:id="@+id/menuLogout"
         android:icon="@drawable/ic_exit"
         android:title="Logout"

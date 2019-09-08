@@ -11,6 +11,7 @@ public class Employee {
     private String lastName;
     private String phone;
     private String email;
+    private String password;
     private String photo;
     private String workPlace;
 
@@ -59,6 +60,10 @@ public class Employee {
         this.workPlace = workPlace;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public int getId() {
         return id;
     }
@@ -97,5 +102,9 @@ public class Employee {
 
     public String getFullName() {
         return this.getSalutation() + "." + this.getFirstName() + " " + this.getLastName();
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

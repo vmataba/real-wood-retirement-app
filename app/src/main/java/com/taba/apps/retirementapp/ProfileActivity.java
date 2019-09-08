@@ -1,10 +1,6 @@
 package com.taba.apps.retirementapp;
 
-import android.animation.TimeAnimator;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -14,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -114,6 +109,13 @@ public class ProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
+
+            case R.id.menuEditProfile:
+
+                Intent profileUpdateIntent = new Intent(ProfileActivity.this, ProfileUpdateActivity.class);
+                startActivity(profileUpdateIntent);
+
+                break;
 
             case R.id.menuLogout:
 

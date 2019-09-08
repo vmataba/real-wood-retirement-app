@@ -2,6 +2,7 @@ package com.taba.apps.retirementapp.extra;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.util.Base64;
 
 import com.makeramen.roundedimageview.RoundedTransformationBuilder;
@@ -26,7 +27,7 @@ public class Tool {
     public static String getString(Bitmap bitmap) {
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] bytes = stream.toByteArray();
         return Base64.encodeToString(bytes, Base64.DEFAULT);
     }
@@ -41,6 +42,5 @@ public class Tool {
                 .replace(".", "");
 
     }
-
 
 }

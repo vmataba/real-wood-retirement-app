@@ -2,7 +2,6 @@ package com.taba.apps.retirementapp.api;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -15,8 +14,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.taba.apps.retirementapp.LoginActivity;
 import com.taba.apps.retirementapp.ProfileActivity;
 import com.taba.apps.retirementapp.employee.Employee;
@@ -29,23 +26,21 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Api{
-
-
+public class DevApi {
 
     public static final int RESPONSE_TYPE_SUCCESS = 1;
 
 
     public static final int RESPONSE_TYPE_ERROR = 0;
 
-    //public static final String SERVER_ADDRESS = "192.168.8.104";
+    //public static final String SERVER_ADDRESS = "192.168.8.100/realwood-retirement/web/ine";
 
 
-    public static final String PROTOCOL = "https";
+    public static final String PROTOCOL = "http";
 
-    public static final String SERVER_ADDRESS = PROTOCOL + "://" + "retirement.graduate.co.tz/index.php?r=";
+    public static final String SERVER_ADDRESS = PROTOCOL + "://192.168.8.101/" + "realwood-retirement/web/index.php?r=";
 
-    public static final String BASE_URL = PROTOCOL + "://" + "retirement.graduate.co.tz/";
+    public static final String BASE_URL = PROTOCOL + "://192.168.8.101/" + "realwood-retirement/web/";
 
     public static final String LOGIN_URL = SERVER_ADDRESS + "api/auth/login";
 
@@ -208,4 +203,5 @@ public class Api{
         queue.add(loginRequest);
 
     }
+
 }
