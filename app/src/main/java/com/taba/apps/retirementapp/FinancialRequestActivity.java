@@ -13,6 +13,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -151,7 +152,7 @@ public class FinancialRequestActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                Log.d("REQUESTS RESPONSE",response);
                 requests = new ArrayList<>();
                 progressBar.setVisibility(View.GONE);
                 try {
@@ -226,6 +227,7 @@ public class FinancialRequestActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 progressBar.setVisibility(View.GONE);
+                Log.d("REQUESTS ERROR",new String(error.networkResponse.data));
                 // Toast.makeText(getBaseContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                 if (!Device.hasInternet(getBaseContext())) {
                     Snackbar.make(financialRequestRecyclerView, "No Internet connection", Snackbar.LENGTH_LONG).show();

@@ -13,6 +13,7 @@ import android.text.Html;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -222,9 +223,9 @@ public class NewRequestActivity extends AppCompatActivity {
 
                     RequestQueue requestQueue = Volley.newRequestQueue(getBaseContext());
                     final Employee employee = SharedPreference.getEmployee(getBaseContext());
-                    String url = Api.CREATE_FINANCIAL_REQUEST;
 
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, Api.CREATE_FINANCIAL_REQUEST, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
 
@@ -252,6 +253,8 @@ public class NewRequestActivity extends AppCompatActivity {
                         public void onErrorResponse(VolleyError error) {
                             progressBar.setVisibility(View.GONE);
                             Snackbar.make(requestItems,"Network or Server Error",Snackbar.LENGTH_LONG).show();
+                            //Snackbar.make(requestItems,new String(error.networkResponse.data),Snackbar.LENGTH_LONG).show();
+                           // Log.d("ERROR RESPONSE",new String(error.networkResponse.data));
                             //Toast.makeText(getBaseContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                             btnSendRequest.setVisibility(View.VISIBLE);
                         }
