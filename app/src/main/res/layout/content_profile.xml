@@ -61,7 +61,7 @@
             android:foreground="?android:attr/selectableItemBackground"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:cardCornerRadius="0dp"
             app:cardElevation="2dp"
 

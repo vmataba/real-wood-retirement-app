@@ -71,7 +71,7 @@ public class RetirementActivity extends AppCompatActivity {
 
         this.handleUndoing();
 
-        this.processRetirement();
+         this.processRetirement();
     }
 
 
@@ -192,11 +192,13 @@ public class RetirementActivity extends AppCompatActivity {
 
     private void processRetirement() {
 
-        retirementAmount.setHint("Should be less than " + request.getTextPendingAmount() + "/=");
+       if (request != null){
+           retirementAmount.setHint("Should be less than " + request.getTextPendingAmount() + "/=");
 
-        labelOfferedAmount.setText(request.getTextIssuedAmount() + "/=");
-        labelPendingAmount.setText(request.getTextPendingAmount() + "/=");
-        labelRetiredAmount.setText(request.getTextRetiredAmount() + "/=");
+           labelOfferedAmount.setText(request.getTextIssuedAmount() + "/=");
+           labelPendingAmount.setText(request.getTextPendingAmount() + "/=");
+           labelRetiredAmount.setText(request.getTextRetiredAmount() + "/=");
+       }
 
 
         sendDetails.setOnClickListener(new View.OnClickListener() {

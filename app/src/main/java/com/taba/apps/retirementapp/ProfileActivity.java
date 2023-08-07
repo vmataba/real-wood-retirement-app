@@ -59,9 +59,9 @@ public class ProfileActivity extends AppCompatActivity {
         retirements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(),"Development is still in progress",Toast.LENGTH_SHORT);
-                //Intent intent = new Intent(ProfileActivity.this, RetirementActivity.class);
-                //startActivity(intent);
+                //Toast.makeText(getBaseContext(),"Development is still in progress",Toast.LENGTH_SHORT);
+                Intent intent = new Intent(ProfileActivity.this, RetirementActivity.class);
+                startActivity(intent);
             }
         });
 
