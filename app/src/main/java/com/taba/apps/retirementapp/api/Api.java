@@ -3,6 +3,7 @@ package com.taba.apps.retirementapp.api;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -41,11 +42,14 @@ public class Api{
     //public static final String SERVER_ADDRESS = "192.168.8.104";
 
 
-    public static final String PROTOCOL = "https";
+    ///public static final String PROTOCOL = "https";
+    public static final String PROTOCOL = "http";
 
-    public static final String SERVER_ADDRESS = PROTOCOL + "://" + "retirement.graduate.co.tz/index.php?r=";
+   // public static final String SERVER_ADDRESS = PROTOCOL + "://" + "retirement.graduate.co.tz/index.php?r=";
+    public static final String SERVER_ADDRESS = PROTOCOL + "://" + "192.168.60.87/realwood-retirement/web/index.php?r=";
 
-    public static final String BASE_URL = PROTOCOL + "://" + "retirement.graduate.co.tz/";
+    //public static final String BASE_URL = PROTOCOL + "://" + "retirement.graduate.co.tz/";
+    public static final String BASE_URL = PROTOCOL + "://" + "192.168.60.87/realwood-retirement/web/";
 
     public static final String LOGIN_URL = SERVER_ADDRESS + "api/auth/login";
 
@@ -71,11 +75,10 @@ public class Api{
 
     public static void login(final Context context, final String username, final String password, final EditText passwordInput, final LoginActivity activity, final ProgressBar progressBar) {
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url = LOGIN_URL;
 
         progressBar.setVisibility(View.VISIBLE);
 
-        StringRequest loginRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest loginRequest = new StringRequest(Request.Method.POST, LOGIN_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 progressBar.setVisibility(View.GONE);
